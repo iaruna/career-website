@@ -10,16 +10,25 @@
       #banner{
         height:360px;
         width:100%;
+        margin-bottom:16px;
       }
     </style>
   </head>
   <body>
+    {% include "nav.html" %}
+    <img class= "img-fluid" id="banner" src="https://website.arunakumari4.repl.co/static/banner.jpg">
     <div class= "container">
       <h1 class="text-center mt-2 mb-4"> {{company_name}} Careers</h1>
-      <img class= "img-fluid" id="banner" src="https://website.arunakumari4.repl.co/static/banner.jpg">
-      <h2 class="text-center mt-2 mb-4">About Me</h2>
+      
+      <div class="row" style= "margin-bottom:16px;">
+        <div class= "col-md-6">
       <p class="lead">“Nor is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure him some great pleasure.”
       </p>
+        </div>
+        <div class= "d-none d-md-block col-md-6">
+        <img src= "/static/people.jpeg" style= "height:320px; border-radius:4px;">
+        </div>
+      </div>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>
       <div> 
         {% for job in jobs %}
@@ -28,8 +37,8 @@
       </div>
       <div class="text-center">
       <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4"> Copyright 2023</p>
       </div>
     </div>
+    {% include "footer.html" %}
   </body>
 </html>
